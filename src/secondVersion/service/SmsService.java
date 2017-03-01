@@ -1,4 +1,4 @@
-package service;
+package secondVersion.service;
 
 /**
  * Created by zuber on 01.03.17.

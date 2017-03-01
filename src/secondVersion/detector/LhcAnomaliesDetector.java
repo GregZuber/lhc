@@ -1,8 +1,8 @@
-package detector;
+package secondVersion.detector;
 
-import service.EmailService;
-import service.MobileAppService;
-import service.SmsService;
+import secondVersion.service.EmailService;
+import secondVersion.service.MobileAppService;
+import secondVersion.service.SmsService;
 
 /**
  * Created by zuber on 01.03.17.

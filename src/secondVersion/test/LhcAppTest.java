@@ -1,6 +1,6 @@
-package test;
+package secondVersion.test;
 
-import detector.LhcAnomaliesDetector;
+import secondVersion.detector.LhcAnomaliesDetector;
 
 /**
  * Created by zuber on 01.03.17.
