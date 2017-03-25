@@ -1,6 +1,6 @@
-package fourthVersion.observer;
+package secondVersion.service;
 
-import fourthVersion.subject.Subject;
+import secondVersion.observer.Observer;
 
 /**
  * Created by zuber on 01.03.17.
@@ -10,10 +10,6 @@ public class MobileAppService implements Observer {
 
   @Override
   public void notify(String message) {
-    sendNotification(message);
-  }
-
-  private void sendNotification(String message) {
     System.out.println(message + " sent by mobile notification to " + mobileId);
   }
 }

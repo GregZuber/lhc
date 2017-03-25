@@ -1,6 +1,6 @@
-package fourthVersion.observer;
+package secondVersion.service;
 
-import fourthVersion.subject.Subject;
+import secondVersion.observer.Observer;
 
 /**
  * Created by zuber on 01.03.17.
@@ -10,11 +10,6 @@ public class SmsService implements Observer {
 
   @Override
   public void notify(String message) {
-    sendSms(message);
-  }
-
-  private void sendSms(String message) {
     System.out.println(message + " sent by sms to " + phoneNumber);
   }
-
 }

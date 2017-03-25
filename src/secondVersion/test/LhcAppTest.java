@@ -1,23 +1,38 @@
 package secondVersion.test;
 
-import secondVersion.observer.EmailService;
-import secondVersion.observer.MobileAppService;
-import secondVersion.observer.Observer;
-import secondVersion.observer.SmsService;
+import secondVersion.service.EmailService;
+import secondVersion.service.MobileAppService;
+import secondVersion.service.SmsService;
 import secondVersion.subject.LhcAnomaliesDetector;
-import secondVersion.subject.Subject;
 
 /**
  * Created by zuber on 01.03.17.
  */
 public class LhcAppTest {
+  private EmailService emailService = new EmailService();
+  private SmsService smsService = new SmsService();
+  private MobileAppService mobileAppService = new MobileAppService();
+
   public static void main(String[] args) {
-    Subject lhcAnomaliesDetector = new LhcAnomaliesDetector();
+    LhcAppTest lhcAppTest = new LhcAppTest();
+    lhcAppTest.test();
+  }
 
-    Observer emailService = new EmailService(lhcAnomaliesDetector);
-    Observer smsService = new SmsService(lhcAnomaliesDetector);
-    MobileAppService mobileAppService = new MobileAppService(lhcAnomaliesDetector);
+  private void test() {
+    LhcAnomaliesDetector lhcAnomaliesDetector = new LhcAnomaliesDetector();
 
-    lhcAnomaliesDetector.notifyObservers("too high temperature");
+    lhcAnomaliesDetector.registerObserver(emailService);
+    lhcAnomaliesDetector.registerObserver(smsService);
+    lhcAnomaliesDetector.registerObserver(mobileAppService);
+
+    lhcAnomaliesDetector.informAboutAnomaly("too high temperature");
+
+    System.out.println("#########################");
+
+    lhcAnomaliesDetector.unregisterObserver(smsService);
+
+    lhcAnomaliesDetector.informAboutAnomaly("magnet 41516-153 is broken!!!!!!! ");
+
+
   }
 }
