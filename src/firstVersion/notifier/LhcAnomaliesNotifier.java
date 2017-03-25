@@ -1,4 +1,4 @@
-package firstVersion.detector;
+package firstVersion.notifier;
 
 import firstVersion.service.EmailService;
 import firstVersion.service.MobileAppService;
@@ -7,7 +7,7 @@ import firstVersion.service.SmsService;
 /**
  * Created by zuber on 01.03.17.
  */
-public class LhcAnomaliesDetector {
+public class LhcAnomaliesNotifier {
   private SmsService smsService = new SmsService();
   private EmailService emailService = new EmailService();
   private MobileAppService mobileAppService = new MobileAppService();

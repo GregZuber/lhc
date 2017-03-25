@@ -1,7 +1,4 @@
-package secondVersion.service;
-
-import secondVersion.observer.Observer;
-
+package secondVersion.observer;
 /**
  * Created by zuber on 01.03.17.
  */

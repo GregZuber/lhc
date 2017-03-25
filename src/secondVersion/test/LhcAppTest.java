@@ -1,9 +1,9 @@
 package secondVersion.test;
 
-import secondVersion.service.EmailService;
-import secondVersion.service.MobileAppService;
-import secondVersion.service.SmsService;
-import secondVersion.subject.LhcAnomaliesDetector;
+import secondVersion.observer.EmailService;
+import secondVersion.observer.MobileAppService;
+import secondVersion.observer.SmsService;
+import secondVersion.subject.LhcAnomaliesNotifier;
 
 /**
  * Created by zuber on 01.03.17.
@@ -19,20 +19,22 @@ public class LhcAppTest {
   }
 
   private void test() {
-    LhcAnomaliesDetector lhcAnomaliesDetector = new LhcAnomaliesDetector();
+    LhcAnomaliesNotifier lhcAnomaliesNotifier = new LhcAnomaliesNotifier();
+    registerObservers(lhcAnomaliesNotifier);
 
-    lhcAnomaliesDetector.registerObserver(emailService);
-    lhcAnomaliesDetector.registerObserver(smsService);
-    lhcAnomaliesDetector.registerObserver(mobileAppService);
-
-    lhcAnomaliesDetector.informAboutAnomaly("too high temperature");
+    lhcAnomaliesNotifier.notify("too high temperature");
 
     System.out.println("#########################");
 
-    lhcAnomaliesDetector.unregisterObserver(smsService);
+    lhcAnomaliesNotifier.unregisterObserver(smsService);
+    lhcAnomaliesNotifier.notify("magnet 41516-153 is broken!!!!!!! ");
 
-    lhcAnomaliesDetector.informAboutAnomaly("magnet 41516-153 is broken!!!!!!! ");
 
+  }
 
+  private void registerObservers(LhcAnomaliesNotifier lhcAnomaliesNotifier) {
+    lhcAnomaliesNotifier.registerObserver(emailService);
+    lhcAnomaliesNotifier.registerObserver(smsService);
+    lhcAnomaliesNotifier.registerObserver(mobileAppService);
   }
 }

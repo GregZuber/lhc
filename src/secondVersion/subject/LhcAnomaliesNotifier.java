@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by g on 21.03.17.
  */
-public class LhcAnomaliesDetector {
+public class LhcAnomaliesNotifier {
     private List<Observer> observers = new LinkedList<>();
 
     public void registerObserver(Observer observer) {
@@ -19,7 +19,7 @@ public class LhcAnomaliesDetector {
         observers.remove(observer);
     }
 
-    public void informAboutAnomaly(String message) {
+    public void notify(String message) {
         observers.forEach(observer -> observer.notify(message));
     }
 }
