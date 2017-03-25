@@ -22,12 +22,12 @@ public class LhcAppTest {
     LhcAnomaliesNotifier lhcAnomaliesNotifier = new LhcAnomaliesNotifier();
     registerObservers(lhcAnomaliesNotifier);
 
-    lhcAnomaliesNotifier.notify("too high temperature");
+    lhcAnomaliesNotifier.notifyObservers("too high temperature");
 
     System.out.println("#########################");
 
     lhcAnomaliesNotifier.unregisterObserver(smsService);
-    lhcAnomaliesNotifier.notify("magnet 41516-153 is broken!!!!!!! ");
+    lhcAnomaliesNotifier.notifyObservers("magnet 41516-153 is broken!!!!!!! ");
 
 
   }

@@ -19,7 +19,7 @@ public class LhcAnomaliesNotifier {
         observers.remove(observer);
     }
 
-    public void notify(String message) {
+    public void notifyObservers(String message) {
         observers.forEach(observer -> observer.notify(message));
     }
 }
