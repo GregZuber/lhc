@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>observer</OriginalElement>
+  <nodes>
+    <node x="-5.0" y="-19.0">observer.observer.Observer</node>
+    <node x="262.0" y="-54.0">observer.subject.Subject</node>
+    <node x="-119.0" y="130.5">observer.observer.ConcreteObserverB</node>
+    <node x="79.0" y="133.5">observer.observer.ConcreteObserverA</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="observer.observer.ConcreteObserverB" target="observer.observer.Observer">
+      <point x="0.0" y="-28.0" />
+      <point x="-19.5" y="112.0" />
+      <point x="-2.166666666666657" y="81.0" />
+      <point x="-57.66666666666666" y="28.0" />
+    </edge>
+    <edge source="observer.observer.ConcreteObserverA" target="observer.observer.Observer">
+      <point x="0.0" y="-28.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+    <edge source="observer.subject.Subject" target="observer.observer.Observer">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="356.5" y="83.5" />
+  <SelectedNodes>
+    <node>observer.subject.Subject</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Methods</Category>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
