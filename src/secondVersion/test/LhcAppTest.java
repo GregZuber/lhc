@@ -6,9 +6,6 @@ import secondVersion.observer.Observer;
 import secondVersion.observer.SmsService;
 import secondVersion.subject.LhcAnomaliesNotifier;
 
-/**
- * Created by zuber on 01.03.17.
- */
 public class LhcAppTest {
 
   public static void main(String[] args) {

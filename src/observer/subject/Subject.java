@@ -5,9 +5,6 @@ import observer.observer.Observer;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by g on 21.03.17.
- */
 public class Subject {
     private List<Observer> observers = new LinkedList<>();
 

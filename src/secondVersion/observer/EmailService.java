@@ -1,7 +1,5 @@
 package secondVersion.observer;
-/**
- * Created by zuber on 01.03.17.
- */
+
 public class EmailService implements Observer {
   private String email = "grzegorz.zuber@cern.ch";
 

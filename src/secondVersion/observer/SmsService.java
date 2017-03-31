@@ -1,8 +1,5 @@
 package secondVersion.observer;
 
-/**
- * Created by zuber on 01.03.17.
- */
 public class SmsService implements Observer {
   private String phoneNumber = "654321987";
 

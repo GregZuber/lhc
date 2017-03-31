@@ -1,8 +1,5 @@
 package firstVersion.service;
 
-/**
- * Created by zuber on 01.03.17.
- */
 public class EmailService {
   private String email = "grzegorz.zuber@cern.ch";
 

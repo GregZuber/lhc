@@ -4,9 +4,6 @@ import firstVersion.service.EmailService;
 import firstVersion.service.MobileAppService;
 import firstVersion.service.SmsService;
 
-/**
- * Created by zuber on 01.03.17.
- */
 public class LhcAnomaliesNotifier {
   private SmsService smsService = new SmsService();
   private EmailService emailService = new EmailService();
