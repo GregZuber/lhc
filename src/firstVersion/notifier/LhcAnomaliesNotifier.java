@@ -4,15 +4,28 @@ import firstVersion.service.EmailService;
 import firstVersion.service.MobileAppService;
 import firstVersion.service.SmsService;
 
-public class LhcAnomaliesNotifier {
-  private SmsService smsService = new SmsService();
-  private EmailService emailService = new EmailService();
-  private MobileAppService mobileAppService = new MobileAppService();
+import java.util.List;
 
-  public void informAboutAnomaly(String message) {
-    smsService.sendSms(message);
-    emailService.sendEmail(message);
-    mobileAppService.sendNotification(message);
+public class LhcAnomaliesNotifier {
+
+  public void informAboutAnomaly(List<Object> services, String message) {
+
+    services.forEach(service -> {
+
+      if (service instanceof EmailService) {
+        ((EmailService) service).sendEmail(message);
+      }
+
+      else if (service instanceof MobileAppService) {
+        ((MobileAppService) service).sendNotification(message);
+      }
+
+      else if (service instanceof SmsService) {
+        ((SmsService) service).sendSms(message);
+      }
+
+    });
+
   }
 
 }
