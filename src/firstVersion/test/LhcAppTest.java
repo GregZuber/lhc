@@ -10,13 +10,13 @@ import java.util.List;
 
 public class LhcAppTest {
   public static void main(String[] args) {
-    List<Object> services = prepareServices();
+    List<Object> servicesToInform = prepareServicesToInform();
 
     LhcAnomaliesNotifier lhcAnomaliesNotifier = new LhcAnomaliesNotifier();
-    lhcAnomaliesNotifier.informAboutAnomaly(services, "too high temperature");
+    lhcAnomaliesNotifier.informAboutAnomaly(servicesToInform, "too high temperature");
   }
 
-  private static List<Object> prepareServices() {
+  private static List<Object> prepareServicesToInform() {
     SmsService smsService = new SmsService();
     EmailService emailService = new EmailService();
     MobileAppService mobileAppService = new MobileAppService();

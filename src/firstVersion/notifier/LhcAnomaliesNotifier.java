@@ -8,9 +8,9 @@ import java.util.List;
 
 public class LhcAnomaliesNotifier {
 
-  public void informAboutAnomaly(List<Object> services, String message) {
+  public void informAboutAnomaly(List<Object> servicesToInform, String message) {
 
-    services.forEach(service -> {
+    servicesToInform.forEach(service -> {
 
       if (service instanceof EmailService) {
         ((EmailService) service).sendEmail(message);
