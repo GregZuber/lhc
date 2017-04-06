@@ -7,6 +7,7 @@ import secondVersion.observer.SmsService;
 import secondVersion.subject.LhcAnomaliesNotifier;
 
 public class LhcAppRefactoredTest {
+  private LhcAnomaliesNotifier lhcAnomaliesNotifier = new LhcAnomaliesNotifier();
   private Observer emailService = new EmailService();
   private Observer smsService = new SmsService();
   private Observer mobileAppService = new MobileAppService();
@@ -17,23 +18,28 @@ public class LhcAppRefactoredTest {
   }
 
   private void test() {
-    LhcAnomaliesNotifier lhcAnomaliesNotifier = new LhcAnomaliesNotifier();
-    registerObservers(lhcAnomaliesNotifier);
-    lhcAnomaliesNotifier.notifyObservers("too high temperature");
-
+    registerObservers();
+    notifyObservers("too high temperature");
     printHashes();
-
-    lhcAnomaliesNotifier.unregisterObserver(smsService);
-    lhcAnomaliesNotifier.notifyObservers("magnet 41516-153 is broken!!!!!!! ");
+    unregisterObserver(smsService);
+    notifyObservers("magnet 41516-153 is broken!!!!!!! ");
   }
 
-  private void registerObservers(LhcAnomaliesNotifier lhcAnomaliesNotifier) {
+  private void registerObservers() {
     lhcAnomaliesNotifier.registerObserver(emailService);
     lhcAnomaliesNotifier.registerObserver(smsService);
     lhcAnomaliesNotifier.registerObserver(mobileAppService);
   }
 
+  private void notifyObservers(String message) {
+    lhcAnomaliesNotifier.notifyObservers(message);
+  }
+
   private void printHashes() {
     System.out.println("#########################");
+  }
+
+  private void unregisterObserver(Observer observer) {
+    lhcAnomaliesNotifier.unregisterObserver(observer);
   }
 }
