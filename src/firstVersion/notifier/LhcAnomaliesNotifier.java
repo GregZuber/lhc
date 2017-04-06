@@ -13,17 +13,17 @@ public class LhcAnomaliesNotifier {
     servicesToInform.forEach(service -> {
 
       if (service instanceof EmailService) {
-        EmailService emailService = ((EmailService) service);
+        EmailService emailService = (EmailService) service;
         emailService.sendEmail(message);
       }
 
       else if (service instanceof MobileAppService) {
-        MobileAppService mobileAppService = ((MobileAppService) service);
+        MobileAppService mobileAppService = (MobileAppService) service;
         mobileAppService.sendNotification(message);
       }
 
       else if (service instanceof SmsService) {
-        SmsService smsService = ((SmsService) service);
+        SmsService smsService = (SmsService) service;
         smsService.sendSms(message);
       }
 
