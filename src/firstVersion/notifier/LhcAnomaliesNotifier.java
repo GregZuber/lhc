@@ -27,6 +27,10 @@ public class LhcAnomaliesNotifier {
         smsService.sendSms(message);
       }
 
+      else {
+        throw new RuntimeException(service.getClass() + " is not a service");
+      }
+
     });
 
   }
